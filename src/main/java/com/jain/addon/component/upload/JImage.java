@@ -23,9 +23,10 @@ import com.jain.addon.component.JStreamSource;
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.CustomField;
+
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.v7.ui.CustomField;
 
 /**
  * <code>JImage<code> is a Image custom component

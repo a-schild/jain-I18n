@@ -19,12 +19,12 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import com.jain.addon.StringHelper;
-import com.vaadin.ui.AbstractSelect;
-import com.vaadin.ui.AbstractTextField;
-import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.Field;
-import com.vaadin.ui.PopupDateField;
+import com.vaadin.v7.ui.AbstractSelect;
+import com.vaadin.v7.ui.AbstractTextField;
+import com.vaadin.v7.ui.ComboBox;
+import com.vaadin.v7.ui.Field;
+import com.vaadin.v7.ui.PopupDateField;
 
 /**
  * <code>I18NFieldHandler<code> is a i18N values handler for {@link Field}

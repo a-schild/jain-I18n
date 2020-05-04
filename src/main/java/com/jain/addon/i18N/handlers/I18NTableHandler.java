@@ -21,9 +21,9 @@ import java.util.Locale;
 
 import com.jain.addon.StringHelper;
 import com.jain.addon.i18N.I18NItemDescriptionGenerator;
-import com.vaadin.ui.AbstractSelect.ItemDescriptionGenerator;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.Table;
+import com.vaadin.v7.ui.AbstractSelect.ItemDescriptionGenerator;
+import com.vaadin.v7.ui.Table;
 
 /**
  * <code>I18NTableHandler<code> is a i18N values handler for {@link Table}

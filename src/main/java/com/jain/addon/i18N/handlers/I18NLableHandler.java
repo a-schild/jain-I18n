@@ -20,7 +20,8 @@ import java.util.Locale;
 
 import com.jain.addon.i18N.component.I18NUI;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.Label;
+import com.vaadin.v7.ui.Label;
+
 
 /**
  * <code>I18NLableHandler<code> is a i18N values handler for {@link Label}

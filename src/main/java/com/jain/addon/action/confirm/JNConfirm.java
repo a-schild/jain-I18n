@@ -15,13 +15,14 @@
  */
 package com.jain.addon.action.confirm;
 
+import com.vaadin.shared.ui.ContentMode;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.vaadin.shared.ui.label.ContentMode;
+
 
 /**
  * <code>JNConfirm<code> action should be annotated with this annotation if confirmation is required.

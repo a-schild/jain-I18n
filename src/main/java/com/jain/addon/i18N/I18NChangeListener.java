@@ -22,97 +22,108 @@ import java.util.Map;
 
 import com.jain.addon.i18N.handlers.I18NComponentHandler;
 import com.jain.addon.i18N.handlers.factory.I18NComponentHandlerFactory;
-import com.vaadin.data.Property.ValueChangeEvent;
-import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Component.Event;
 import com.vaadin.ui.HasComponents;
+import com.vaadin.v7.data.Property;
+import com.vaadin.v7.data.Property.ValueChangeListener;
+import com.vaadin.v7.ui.Label.ValueChangeEvent;
 
 /**
  * <code>I18NChangeListener<code> is a default listener provided for the locale change.
- * This is implemented as value change listener in the application 
+ * This is implemented as value change listener in the application
  * because most of the application uses drop down for local selection.
  * I case you are using some other way, call value change method to invoke all locale change events.
+ *
  * @author Lokesh Jain
  * @since Aug 27, 2012
  * @version 1.0.0
  */
 @SuppressWarnings("serial")
 public class I18NChangeListener implements ValueChangeListener {
-	private Map<Component, I18NComponentHandler> componentMap;
-	private Locale currentLocale;
 
-	protected I18NChangeListener () {
-		this.componentMap = new HashMap <Component, I18NComponentHandler> ();
-		this.currentLocale = Locale.getDefault();
-	}
+    private Map<Component, I18NComponentHandler> componentMap;
+    private Locale currentLocale;
 
-	public void localeChanged (Component component) {
-		if (currentLocale != component.getUI().getLocale()) {
-			currentLocale = component.getUI().getLocale();
+    protected I18NChangeListener() {
+        this.componentMap = new HashMap<Component, I18NComponentHandler>();
+        this.currentLocale = Locale.getDefault();
+    }
 
-			updateComponents(component);
-		}
-	}
+    public void localeChanged(Component component) {
+        if (currentLocale != component.getUI().getLocale())
+        {
+            currentLocale = component.getUI().getLocale();
 
-	private void updateComponents(Component component) {
-		if(component instanceof HasComponents) {
-			HasComponents container = (HasComponents) component;
+            updateComponents(component);
+        }
+    }
 
-			for (Component containerComponent : container) {
-				updateComponents(containerComponent);
-			}
-		}
+    private void updateComponents(Component component) {
+        if (component instanceof HasComponents)
+        {
+            HasComponents container = (HasComponents) component;
 
-		updateCaption(component);
+            for (Component containerComponent : container)
+            {
+                updateComponents(containerComponent);
+            }
+        }
 
-		if (component instanceof I18NListener) {
-			I18NChangeEvent event = new I18NChangeEvent(component, currentLocale);
-			((I18NListener) component).localeChanged(event);
-		}
-	}
+        updateCaption(component);
 
-	private void updateCaption(Component component) {
-		I18NComponentHandler handler = componentMap.get(component);
+        if (component instanceof I18NListener)
+        {
+            I18NChangeEvent event = new I18NChangeEvent(component, currentLocale);
+            ((I18NListener) component).localeChanged(event);
+        }
+    }
 
-		if (handler != null) {
-			handler.applyI18N(component, currentLocale);
-		}
-	}
+    private void updateCaption(Component component) {
+        I18NComponentHandler handler = componentMap.get(component);
 
-	public void registor(Component component) {
-		componentMap.put(component, I18NComponentHandlerFactory.getHandler(component));
-		updateCaption(component);
-	}
+        if (handler != null)
+        {
+            handler.applyI18N(component, currentLocale);
+        }
+    }
 
-	public void deRegistor(Component component) {
-		componentMap.remove(component);
-	}
+    public void registor(Component component) {
+        componentMap.put(component, I18NComponentHandlerFactory.getHandler(component));
+        updateCaption(component);
+    }
 
-	public String getI18NCaption(Component component) {
-		I18NComponentHandler handler = componentMap.get(component);
-		if (handler != null) 
-			return handler.getI18NCaption();
-		return "";
-	}
-	
-	public String getI18NCaption(Component component, Serializable serializable) {
-		I18NComponentHandler handler = componentMap.get(component);
-		if (handler != null) 
-			return handler.getI18NCaption(serializable);
-		return "";
-	}
+    public void deRegistor(Component component) {
+        componentMap.remove(component);
+    }
 
-	public I18NComponentHandler getI18NComponentHandler(Component component) {
-		I18NComponentHandler handler = componentMap.get(component);
-		return handler;
-	}
+    public String getI18NCaption(Component component) {
+        I18NComponentHandler handler = componentMap.get(component);
+        if (handler != null)
+        {
+            return handler.getI18NCaption();
+        }
+        return "";
+    }
 
-	
-	public void valueChange(ValueChangeEvent valueChangeEvent) {
-		Event event = (Event) valueChangeEvent;
-		Locale selected = ((Locale) valueChangeEvent.getProperty().getValue());
-		selected = selected == null ? Locale.getDefault() : selected;
-		event.getComponent().getUI().setLocale(selected);
-	}
+    public String getI18NCaption(Component component, Serializable serializable) {
+        I18NComponentHandler handler = componentMap.get(component);
+        if (handler != null)
+        {
+            return handler.getI18NCaption(serializable);
+        }
+        return "";
+    }
+
+    public I18NComponentHandler getI18NComponentHandler(Component component) {
+        I18NComponentHandler handler = componentMap.get(component);
+        return handler;
+    }
+
+    public void valueChange(Property.ValueChangeEvent valueChangeEvent) {
+        Event event = (Event) valueChangeEvent;
+        Locale selected = ((Locale) valueChangeEvent.getProperty().getValue());
+        selected = selected == null ? Locale.getDefault() : selected;
+        event.getComponent().getUI().setLocale(selected);
+    }
 }

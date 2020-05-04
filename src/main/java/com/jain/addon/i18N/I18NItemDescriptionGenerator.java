@@ -15,9 +15,10 @@
  */
 package com.jain.addon.i18N;
 
+import com.vaadin.v7.ui.AbstractSelect.ItemDescriptionGenerator;
 import java.util.Locale;
 
-import com.vaadin.ui.AbstractSelect.ItemDescriptionGenerator;
+
 
 /**
  * 

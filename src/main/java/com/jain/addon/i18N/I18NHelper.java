@@ -19,8 +19,8 @@ import java.io.Serializable;
 
 import com.jain.addon.i18N.component.I18NUI;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.Field;
 import com.vaadin.ui.UI;
+import com.vaadin.v7.ui.Field;
 
 /**
  * <code>I18NHelper<code> is a helper class for the i18N component handling.

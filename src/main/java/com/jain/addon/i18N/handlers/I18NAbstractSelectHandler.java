@@ -22,8 +22,8 @@ import java.util.Locale;
 import java.util.Map.Entry;
 
 import com.jain.addon.StringHelper;
-import com.vaadin.ui.AbstractSelect;
 import com.vaadin.ui.Component;
+import com.vaadin.v7.ui.AbstractSelect;
 
 /**
  * <code>I18NAbstractSelectHandler<code> is a i18N values handler for {@link AbstractSelect}

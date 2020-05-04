@@ -15,12 +15,12 @@
  */
 package com.jain.addon.component.upload;
 
+import com.vaadin.v7.ui.Upload.Receiver;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import com.vaadin.ui.Upload.Receiver;
 
 /**
  * <code>JFileReceiver<code> is a default receiver implementation for the file receiving from the {@link JImageUpload} component 

@@ -15,8 +15,9 @@
  */
 package com.jain.addon.component.upload;
 
-import com.vaadin.ui.ProgressBar;
-import com.vaadin.ui.Upload.ProgressListener;
+import com.vaadin.v7.ui.ProgressBar;
+import com.vaadin.v7.ui.Upload.ProgressListener;
+
 
 /**
  * <code>JProgressIndicator<code> default progress indicator for the {@link JImageUpload}

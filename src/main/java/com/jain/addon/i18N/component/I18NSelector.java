@@ -19,8 +19,8 @@ import java.util.Locale;
 
 import com.jain.addon.JNIComponentInit;
 import com.jain.addon.i18N.I18NHelper;
-import com.vaadin.data.Item;
-import com.vaadin.ui.ComboBox;
+import com.vaadin.v7.data.Item;
+import com.vaadin.v7.ui.ComboBox;
 
 /**
  * <code>I18NSelector<code> a I18N language selector, with basic configuration of having listeners. 

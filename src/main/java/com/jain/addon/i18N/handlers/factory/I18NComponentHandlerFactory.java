@@ -29,14 +29,14 @@ import com.jain.addon.i18N.handlers.I18NMenuBarHandler;
 import com.jain.addon.i18N.handlers.I18NTabSheetHandler;
 import com.jain.addon.i18N.handlers.I18NTableHandler;
 import com.vaadin.ui.AbstractComponent;
-import com.vaadin.ui.AbstractSelect;
-import com.vaadin.ui.AbstractTextField;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
-import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TabSheet;
-import com.vaadin.ui.Table;
+import com.vaadin.v7.ui.AbstractSelect;
+import com.vaadin.v7.ui.AbstractTextField;
+import com.vaadin.v7.ui.Label;
+import com.vaadin.v7.ui.PopupDateField;
+import com.vaadin.v7.ui.Table;
 
 /**
  * <code>I18NComponentHandlerFactory<code> is a factory class to 

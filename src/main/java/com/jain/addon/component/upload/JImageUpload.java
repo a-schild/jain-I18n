@@ -15,10 +15,10 @@
  */
 package com.jain.addon.component.upload;
 
+import com.vaadin.v7.ui.Upload.StartedEvent;
+import com.vaadin.v7.ui.Upload.SucceededEvent;
 import java.io.ByteArrayOutputStream;
 
-import com.vaadin.ui.Upload.StartedEvent;
-import com.vaadin.ui.Upload.SucceededEvent;
 
 /**
  * <code>JImageUpload<code> default Image uploader
